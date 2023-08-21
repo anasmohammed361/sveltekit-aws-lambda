@@ -7,7 +7,6 @@ import type {
   CloudFrontRequestResult,
   CloudFrontHeaders,
 } from "aws-lambda";
-import { debug } from "./logger.js";
 
 export type InternalEvent = {
   readonly type: "v1" | "v2" | "cf";
@@ -143,7 +142,7 @@ function convertToApiGatewayProxyResult(
     isBase64Encoded: result.isBase64Encoded,
     multiValueHeaders,
   };
-  debug(response);
+
   return response;
 }
 
@@ -167,7 +166,7 @@ function convertToApiGatewayProxyResultV2(
     body: result.body,
     isBase64Encoded: result.isBase64Encoded,
   };
-  debug(response);
+  
   return response;
 }
 
@@ -192,7 +191,7 @@ function convertToCloudFrontRequestResult(
     bodyEncoding: result.isBase64Encoded ? "base64" : "text",
     body: result.body,
   };
-  debug(response);
+
   return response;
 }
 
