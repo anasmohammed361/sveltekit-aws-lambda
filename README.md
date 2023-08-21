@@ -1,2 +1,2 @@
 # svlete-aws-lambda
-This adapter allows SvelteKit to deploy your SSR site to [AWS](https://aws.amazon.com/).
+This adapter allows you to run  SvelteKit site on  [AWS](https://aws.amazon.com/) lambda.
