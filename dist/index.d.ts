@@ -1,5 +1,7 @@
 import type { Builder } from '@sveltejs/kit';
-export default function (): {
+import { bundleApp } from './bundle/build';
+declare function adapter(): {
     name: string;
     adapt(builder: Builder): Promise<void>;
 };
+export { adapter, bundleApp };

@@ -3,8 +3,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Builder } from '@sveltejs/kit';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-
-export default function () {
+import { bundleApp } from './bundle/build';
+function adapter() {
 	const adapter = {
 		name: 'sachtak-adapter',
 		async adapt(builder: Builder) {
@@ -39,3 +39,5 @@ export default function () {
 
 	return adapter;
 }
+
+export {adapter ,bundleApp}
