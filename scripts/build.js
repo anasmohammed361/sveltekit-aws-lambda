@@ -3,7 +3,7 @@ import * as path from 'path';
 import { cp } from 'fs/promises';
 async function main() {
 	await build({
-		entryPoints: [path.join('.svelte-kit', 'svelte-kit-sst', 'server', 'lambda-handler', 'index.js')],
+		entryPoints: [path.join('out', 'server', 'lambda-handler', 'index.js')],
 		bundle: true,
 		platform: 'node',
 		target: ['esnext'],
@@ -19,7 +19,7 @@ async function main() {
 		},
 		outdir: path.join('build')
 	});
-	await cp(path.join('.svelte-kit','svelte-kit-sst','prerendered'),path.join('build','prerendered'),{
+	await cp(path.join('out','prerendered'),path.join('build','prerendered'),{
 		recursive:true
 	});
 }
