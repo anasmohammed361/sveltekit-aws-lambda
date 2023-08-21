@@ -1,7 +1,7 @@
 import { build } from 'esbuild';
 import * as path from 'path';
 import { cp } from 'fs/promises';
-async function main() {
+export async function bundleApp() {
 	await build({
 		entryPoints: [path.join('out', 'server', 'lambda-handler', 'index.js')],
 		bundle: true,
@@ -23,4 +23,3 @@ async function main() {
 		recursive:true
 	});
 }
-main()

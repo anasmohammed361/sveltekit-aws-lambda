@@ -21,7 +21,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./build":{
+      "import":"./scripts/build.js"
+    }
   },
   "scripts": {
     "build": "tsc"
