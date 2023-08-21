@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Builder } from '@sveltejs/kit';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
-import { bundleApp } from './bundle/build';
+import { bundleApp } from './bundle/build.js';
 function adapter() {
 	const adapter = {
 		name: 'sachtak-adapter',
