@@ -4,9 +4,9 @@
 
 ---
 
-### `svelte.config.js`
+### svelte.config.js
 
-```bash
+```
 import { adapter } from 'sveltekit-lambda-adapter';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
@@ -26,20 +26,19 @@ const config = {
 
 export default config;
 ```
+---
+### build.js
 
-### `build.js`
-
-```bash
+```
 import {bundleApp} from "sveltekit-lambda-adapter"
 bundleApp()
 ```
-
+---
 # Build app
 
 ```bash
 npm run build
 ```
-
 ```bash
 node build.js
 ```
