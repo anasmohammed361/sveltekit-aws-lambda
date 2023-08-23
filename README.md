@@ -42,3 +42,6 @@ npm run build
 ```bash
 node build.js
 ```
+
+---
+[Chechout this blog](https://medium.com/@anasmohammed361/sveltekit-on-aws-lambda-cloudfront-s3-79d60d572f4d)
