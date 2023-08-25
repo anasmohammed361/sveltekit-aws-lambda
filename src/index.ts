@@ -4,7 +4,9 @@ import type { Builder } from "@sveltejs/kit";
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 import { build } from "esbuild";
 import * as path from "path";
-import { cp, rm } from "fs/promises";
+import { cp, rm, } from "fs/promises";
+import { existsSync } from "node:fs";
+
 async function bundleApp() {
   await rm(path.join("build"), { recursive: true, force: true });
   await build({
@@ -24,9 +26,15 @@ async function bundleApp() {
     },
     outdir: path.join("build"),
   });
-  await cp(path.join("out", "prerendered"), path.join("build", "prerendered"), {
-    recursive: true,
-  });
+  if (existsSync(path.join("out", "prerendered"))) {
+    await cp(path.join("out", "prerendered"), path.join("build", "prerendered"), {
+      recursive: true,
+    });
+  }else{
+    console.log("No Prerendered Directory found.");
+  }
+  console.log("BUILD SUCEEDED!");
+  
 }
 
 function adapter() {
